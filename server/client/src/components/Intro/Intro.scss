@@ -1,0 +1,105 @@
+@import "../../global.scss";
+
+.intro {
+  color: #393e46;
+  background-color: $mainColor;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .part {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow-y: hidden;
+  }
+
+  .left {
+    flex: 0.5;
+
+    overflow: hidden;
+
+    .imgContainer {
+      width: 700px;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      @include mobile {
+        align-items: flex-start;
+      }
+
+      img {
+        width: 90%;
+        z-index: 1;
+        @include mobile {
+          height: 40%;
+          width: 50%;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+
+    position: relative;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin: 10px 0;
+      }
+      h2 {
+        font-size: 35px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+
+      span {
+        font-size: inherit;
+        color: crimson;
+      }
+      .ityped-cursor {
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      a {
+        margin: 30px 0 0 80px;
+        animation: arrowBlink 2s infinite;
+        @include mobile {
+          margin-left: 10px;
+        }
+      }
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
